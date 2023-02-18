@@ -29,6 +29,4 @@ Stack:
 - MySQL
 - Blade
 - AlpineJS
-- TailwindJS
-- PicoCSS
 - TailwindCSS
