@@ -4,7 +4,7 @@
 
 Requirements:
 - Docker Desktop
- 
+
 Installation:
 - Clone this repository.
 - cd into it
