@@ -1,0 +1,29 @@
+# Configuration file for Chipper CI
+version: 1
+
+environment:
+  php: 8.2
+  node: 18
+
+services:
+  - mysql: 5.7
+  - redis:
+
+on:
+  push:
+    branches: main
+
+pipeline:
+  - name: Setup
+    cmd: |
+      cp -v .env.example .env
+      composer install --no-interaction --prefer-dist --optimize-autoloader
+      php artisan key:generate
+
+  - name: Compile Dev Assets
+    cmd: |
+      npm ci --no-audit
+      npm run build # Vite
+
+  - name: Run Tests
+    cmd: php artisan test
