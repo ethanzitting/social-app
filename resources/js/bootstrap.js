@@ -30,3 +30,12 @@ window.Echo = new Echo({
     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
     enabledTransports: ['ws', 'wss'],
 });
+
+window.Echo.private(`all.` + import.meta.env.VITE_BROADCAST_NAMESPACE)
+    .listenToAll((event, data) => {
+        console.log('event')
+        console.log(event)
+
+        console.log('data')
+        console.log(data)
+    })

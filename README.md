@@ -23,13 +23,13 @@ Installation:
   - `cp .env.example .env`
 - Add Pusher api keys to the newly created .env file.
 - Start the docker containers with:
-  - `sail up -d`
+  - `./vendor/bin/sail up -d`
 - Run any database migrations with:
-  - `sail artisan migrate`
+  - `./vendor/bin/sail artisan migrate`
 - Install the front end dependencies with:
-  - `sail npm install`
+  - `./vendor/bin/sail npm install`
 - Start vite to generate the manifest and enable hot reloading with:
-  - `sail npm run dev`
+  - `./vendor/bin/sail npm run dev`
 - Visit the app in a browser at: http://localhost:80
 
 Stack:
